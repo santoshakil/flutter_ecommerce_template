@@ -21,7 +21,7 @@ dependencies:
   intl: any
   numberpicker: ^1.0.0
   flare_splash_screen: ^2.1.2
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.1
 
 
 dev_dependencies:
