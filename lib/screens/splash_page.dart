@@ -1,6 +1,7 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/auth/welcome_back_page.dart';
 import 'package:flutter/material.dart';
+
+import '../app_properties.dart';
+import 'auth/welcome_back_page.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

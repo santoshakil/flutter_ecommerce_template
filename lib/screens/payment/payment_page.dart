@@ -1,8 +1,10 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/product/components/color_list.dart';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:math' as math;
+
+import '../../app_properties.dart';
+import '../product/components/color_list.dart';
 
 class PaymentPage extends StatefulWidget {
   @override
@@ -20,10 +22,10 @@ class _PaymentPageState extends State<PaymentPage> {
   ScrollController scrollController = ScrollController();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    scrollController.addListener((){
-      if(scrollController.position.userScrollDirection.index==1){
+    scrollController.addListener(() {
+      if (scrollController.position.userScrollDirection.index == 1) {
         FocusScope.of(context).requestFocus(FocusNode());
       }
     });

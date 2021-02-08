@@ -1,6 +1,7 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/payment/promo_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
+import 'promo_item.dart';
 
 class UnpaidPage extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _UnpaidPageState extends State<UnpaidPage> {
         child: SafeArea(
           child: LayoutBuilder(
               builder: (_, constraints) => SingleChildScrollView(
-                physics: ClampingScrollPhysics(),
+                  physics: ClampingScrollPhysics(),
                   child: ConstrainedBox(
                       constraints: BoxConstraints(
                         minHeight: constraints.maxHeight,
@@ -55,7 +56,8 @@ class _UnpaidPageState extends State<UnpaidPage> {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text(
                                     'Unpaid',
@@ -72,7 +74,8 @@ class _UnpaidPageState extends State<UnpaidPage> {
                             PromoItem(),
                             Container(
                               margin: const EdgeInsets.all(16.0),
-                              padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 16.0),
+                              padding: const EdgeInsets.fromLTRB(
+                                  16.0, 0, 16.0, 16.0),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   boxShadow: shadow,
@@ -100,16 +103,18 @@ class _UnpaidPageState extends State<UnpaidPage> {
                                   ),
                                   Divider(),
                                   ListTile(
-                                    title: Text('Total',style:
-                                      TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold
-                                      ),),
-                                    trailing: Text('\$ 66.93',style:
-                                    TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold
-                                    ),),
+                                    title: Text(
+                                      'Total',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    trailing: Text(
+                                      '\$ 66.93',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   )
                                 ],
                               ),

@@ -1,5 +1,6 @@
-import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/material.dart';
+
+import '../../../app_properties.dart';
 
 class ColorList extends StatefulWidget {
   final List<Color> colorList;
@@ -35,23 +36,23 @@ class _ColorListState extends State<ColorList> {
 
               /// list of button colors based on colorList
               itemBuilder: (_, index) => InkWell(
-                    onTap: () {
-                      setState(() {
-                        ///sets the color pressed to be the active one
-                        active = index;
-                      });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 4.0, vertical: 8.0),
+                onTap: () {
+                  setState(() {
+                    ///sets the color pressed to be the active one
+                    active = index;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 4.0, vertical: 8.0),
 
-                      ///scale based on active color
-                      child: Transform.scale(
-                        scale: active == index ? 1.2 : 1,
-                        child: ColorOption(widget.colorList[index]),
-                      ),
-                    ),
+                  ///scale based on active color
+                  child: Transform.scale(
+                    scale: active == index ? 1.2 : 1,
+                    child: ColorOption(widget.colorList[index]),
                   ),
+                ),
+              ),
             ),
           ),
         ],
@@ -71,8 +72,7 @@ class ColorOption extends StatelessWidget {
       width: 32,
       height: 32,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-         color: color),
+          borderRadius: BorderRadius.all(Radius.circular(5)), color: color),
     );
   }
 }

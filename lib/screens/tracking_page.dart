@@ -1,6 +1,7 @@
-import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../app_properties.dart';
 
 class TrackingPage extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class _TrackingPageState extends State<TrackingPage> {
           image: DecorationImage(
               image: AssetImage('assets/Group 444.png'), fit: BoxFit.contain)),
       child: Container(
-        color:Colors.white54,
+        color: Colors.white54,
         child: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
@@ -57,7 +58,7 @@ class _TrackingPageState extends State<TrackingPage> {
             ),
             body: SafeArea(
               child: LayoutBuilder(
-                builder:(_,constraints)=> Column(
+                builder: (_, constraints) => Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Container(
@@ -82,7 +83,12 @@ class _TrackingPageState extends State<TrackingPage> {
                                   color: Colors.white,
                                   child: Align(
                                       alignment: Alignment.centerLeft,
-                                      child: Text(val,maxLines: 2,semanticsLabel: '...',overflow: TextOverflow.ellipsis,))),
+                                      child: Text(
+                                        val,
+                                        maxLines: 2,
+                                        semanticsLabel: '...',
+                                        overflow: TextOverflow.ellipsis,
+                                      ))),
                             );
                           }).toList(),
                           onChanged: (val) {
@@ -96,46 +102,50 @@ class _TrackingPageState extends State<TrackingPage> {
                           elevation: 0,
                         ),
                       ),
-                    ),SingleChildScrollView(
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(maxHeight: constraints.maxHeight-48,),
-                          child: Theme(
-                            data:
-                                ThemeData(primaryColor: yellow, fontFamily: 'Montserrat'),
-                            child: Stepper(
+                    ),
+                    SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: constraints.maxHeight - 48,
+                        ),
+                        child: Theme(
+                          data: ThemeData(
+                              primaryColor: yellow, fontFamily: 'Montserrat'),
+                          child: Stepper(
 //                          physics: NeverScrollableScrollPhysics(),
-                              steps: [
-                                ...locations
-                                    .map(
-                                      (location) => Step(
-                                        isActive: location.isHere || location.passed,
-                                        title: Text(location.city),
-                                        subtitle: Text(location.getDate()),
-                                        content: Align(
-                                          child: Image.asset('assets/icons/truck.png'),
-                                          alignment: Alignment.centerLeft,
-                                        ),
-                                        state: location.passed
-                                            ? StepState.complete
-                                            : location.isHere
-                                                ? StepState.editing
-                                                : StepState.indexed,
+                            steps: [
+                              ...locations
+                                  .map(
+                                    (location) => Step(
+                                      isActive:
+                                          location.isHere || location.passed,
+                                      title: Text(location.city),
+                                      subtitle: Text(location.getDate()),
+                                      content: Align(
+                                        child: Image.asset(
+                                            'assets/icons/truck.png'),
+                                        alignment: Alignment.centerLeft,
                                       ),
-                                    )
-                                    .toList()
-                              ],
-                              currentStep: locations
-                                  .indexOf(locations.firstWhere((loc) => loc.isHere)),
-                              controlsBuilder: (BuildContext context,
-                                  {VoidCallback onStepContinue,
-                                  VoidCallback onStepCancel}) {
-                                return Container();
-                              },
-                            ),
+                                      state: location.passed
+                                          ? StepState.complete
+                                          : location.isHere
+                                              ? StepState.editing
+                                              : StepState.indexed,
+                                    ),
+                                  )
+                                  .toList()
+                            ],
+                            currentStep: locations.indexOf(
+                                locations.firstWhere((loc) => loc.isHere)),
+                            controlsBuilder: (BuildContext context,
+                                {VoidCallback onStepContinue,
+                                VoidCallback onStepCancel}) {
+                              return Container();
+                            },
                           ),
                         ),
                       ),
-
+                    ),
                   ],
                 ),
               ),

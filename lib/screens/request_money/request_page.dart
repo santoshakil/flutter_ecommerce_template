@@ -1,11 +1,11 @@
-import 'package:ecommerce_int2/api_service.dart';
-import 'package:ecommerce_int2/models/user.dart';
-import 'package:ecommerce_int2/screens/request_money/request_amount_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../api_service.dart';
 import '../../app_properties.dart';
+import '../../models/user.dart';
+import 'request_amount_page.dart';
 
 class RequestPage extends StatefulWidget {
   @override
@@ -89,7 +89,10 @@ class _RequestPageState extends State<RequestPage> {
                     hintText: 'Search',
                     contentPadding: EdgeInsets.zero,
                     border: InputBorder.none,
-                    prefixIcon: SvgPicture.asset('assets/icons/search_icon.svg', fit: BoxFit.scaleDown,),
+                    prefixIcon: SvgPicture.asset(
+                      'assets/icons/search_icon.svg',
+                      fit: BoxFit.scaleDown,
+                    ),
                     suffix: FlatButton(
                         onPressed: () {
                           // searchController.clear();
@@ -119,7 +122,8 @@ class _RequestPageState extends State<RequestPage> {
                             .map((user) => InkWell(
                                   onTap: () => Navigator.of(context).push(
                                       MaterialPageRoute(
-                                          builder: (_) => RequestAmountPage(user))),
+                                          builder: (_) =>
+                                              RequestAmountPage(user))),
                                   child: Container(
                                       width: 100,
                                       height: 200,

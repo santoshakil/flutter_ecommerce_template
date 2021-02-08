@@ -1,14 +1,15 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 
+import '../../../app_properties.dart';
+import '../../../models/product.dart';
+import '../../shop/check_out_page.dart';
 import 'shop_bottomSheet.dart';
 
 class ProductOption extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final Product product;
-  const ProductOption(this.scaffoldKey, {Key key, this.product}) : super(key: key);
+  const ProductOption(this.scaffoldKey, {Key key, this.product})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +45,8 @@ class ProductOption extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () async {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CheckOutPage()));
-
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => CheckOutPage()));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.5,

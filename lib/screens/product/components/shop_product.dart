@@ -1,12 +1,13 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/product.dart';
 import 'package:flutter/material.dart';
+
+import '../../../app_properties.dart';
+import '../../../models/product.dart';
 
 class ShopProduct extends StatelessWidget {
   final Product product;
   final Function onRemove;
 
-  const ShopProduct(this.product,{Key key,this.onRemove}) : super(key: key);
+  const ShopProduct(this.product, {Key key, this.onRemove}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,10 @@ class ShopProduct extends StatelessWidget {
         width: MediaQuery.of(context).size.width / 2,
         child: Column(
           children: <Widget>[
-            ShopProductDisplay(product,onPressed: onRemove,),
+            ShopProductDisplay(
+              product,
+              onPressed: onRemove,
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -41,7 +45,8 @@ class ShopProductDisplay extends StatelessWidget {
   final Product product;
   final Function onPressed;
 
-  const ShopProductDisplay(this.product,{Key key,this.onPressed}) : super(key: key);
+  const ShopProductDisplay(this.product, {Key key, this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +69,12 @@ class ShopProductDisplay extends StatelessWidget {
           left: 50,
           top: 5,
           child: SizedBox(
-              height:80,
+              height: 80,
               width: 80,
-              child: Image.asset('${product.image}',fit: BoxFit.contain,)),
+              child: Image.asset(
+                '${product.image}',
+                fit: BoxFit.contain,
+              )),
         ),
         Positioned(
           right: 30,

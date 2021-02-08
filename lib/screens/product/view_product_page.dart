@@ -1,13 +1,13 @@
-import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/product/components/rating_bottomSheet.dart';
-import 'package:ecommerce_int2/screens/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../app_properties.dart';
+import '../../models/product.dart';
+import '../search_page.dart';
 import 'components/color_list.dart';
 import 'components/more_products.dart';
 import 'components/product_options.dart';
+import 'components/rating_bottomSheet.dart';
 
 class ViewProductPage extends StatefulWidget {
   final Product product;
@@ -80,7 +80,10 @@ class _ViewProductPageState extends State<ViewProductPage> {
           iconTheme: IconThemeData(color: darkGrey),
           actions: <Widget>[
             IconButton(
-              icon: new SvgPicture.asset('assets/icons/search_icon.svg', fit: BoxFit.scaleDown,),
+              icon: new SvgPicture.asset(
+                'assets/icons/search_icon.svg',
+                fit: BoxFit.scaleDown,
+              ),
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => SearchPage())),
             )
@@ -119,12 +122,12 @@ class _ViewProductPageState extends State<ViewProductPage> {
                     RawMaterialButton(
                       onPressed: () {
                         showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              return RatingBottomSheet();
-                            },
-                            //elevation: 0,
-                            //backgroundColor: Colors.transparent
+                          context: context,
+                          builder: (context) {
+                            return RatingBottomSheet();
+                          },
+                          //elevation: 0,
+                          //backgroundColor: Colors.transparent
                         );
                       },
                       constraints:

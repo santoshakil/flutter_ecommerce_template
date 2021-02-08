@@ -1,7 +1,9 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/user.dart';
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
+import '../../models/user.dart';
 
 class ReceivePaymentPage extends StatelessWidget {
   final User user;
@@ -106,8 +108,7 @@ class ReceivePaymentPage extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text('Retry Again with new',
-                    style: TextStyle(
-                        color:Colors.white)),
+                    style: TextStyle(color: Colors.white)),
                 SizedBox(
                   width: 8.0,
                 ),
@@ -116,7 +117,7 @@ class ReceivePaymentPage extends StatelessWidget {
                     child: Text(
                       'QR code',
                       style: TextStyle(
-                        color:Colors.white,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.underline),
                     ))

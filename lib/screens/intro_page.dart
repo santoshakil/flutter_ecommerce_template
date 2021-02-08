@@ -1,6 +1,7 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/main/main_page.dart';
 import 'package:flutter/material.dart';
+
+import '../app_properties.dart';
+import 'main/main_page.dart';
 
 class IntroPage extends StatefulWidget {
   @override

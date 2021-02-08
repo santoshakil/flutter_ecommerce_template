@@ -1,6 +1,7 @@
-import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   @override
@@ -68,7 +69,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 48.0,top:16.0),
+                            padding:
+                                const EdgeInsets.only(bottom: 48.0, top: 16.0),
                             child: Text(
                               'Change Password',
                               style: TextStyle(

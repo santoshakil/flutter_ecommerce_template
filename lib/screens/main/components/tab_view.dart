@@ -1,8 +1,6 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/category.dart';
-
 import 'package:flutter/material.dart';
 
+import '../../../models/category.dart';
 import 'category_card.dart';
 import 'recommended_list.dart';
 

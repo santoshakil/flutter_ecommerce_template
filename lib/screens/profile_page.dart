@@ -1,10 +1,11 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/faq_page.dart';
-import 'package:ecommerce_int2/screens/payment/payment_page.dart';
-import 'package:ecommerce_int2/screens/settings/settings_page.dart';
-import 'package:ecommerce_int2/screens/tracking_page.dart';
-import 'package:ecommerce_int2/screens/wallet/wallet_page.dart';
 import 'package:flutter/material.dart';
+
+import '../app_properties.dart';
+import 'faq_page.dart';
+import 'payment/payment_page.dart';
+import 'settings/settings_page.dart';
+import 'tracking_page.dart';
+import 'wallet/wallet_page.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -56,7 +57,7 @@ class ProfilePage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               icon: Image.asset('assets/icons/wallet.png'),
-                              onPressed:()=> Navigator.of(context).push(
+                              onPressed: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (_) => WalletPage())),
                             ),
@@ -72,7 +73,8 @@ class ProfilePage extends StatelessWidget {
                             IconButton(
                               icon: Image.asset('assets/icons/truck.png'),
                               onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(builder: (_) => TrackingPage())),
+                                  MaterialPageRoute(
+                                      builder: (_) => TrackingPage())),
                             ),
                             Text(
                               'Shipped',
@@ -85,7 +87,7 @@ class ProfilePage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               icon: Image.asset('assets/icons/card.png'),
-                              onPressed:()=> Navigator.of(context).push(
+                              onPressed: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (_) => PaymentPage())),
                             ),
@@ -99,7 +101,8 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
-                              icon: Image.asset('assets/icons/contact_us.png'), onPressed: () {},
+                              icon: Image.asset('assets/icons/contact_us.png'),
+                              onPressed: () {},
                             ),
                             Text(
                               'Support',
@@ -114,10 +117,15 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   title: Text('Settings'),
                   subtitle: Text('Privacy and logout'),
-                  leading: Image.asset('assets/icons/settings_icon.png', fit: BoxFit.scaleDown, width: 30, height: 30,),
+                  leading: Image.asset(
+                    'assets/icons/settings_icon.png',
+                    fit: BoxFit.scaleDown,
+                    width: 30,
+                    height: 30,
+                  ),
                   trailing: Icon(Icons.chevron_right, color: yellow),
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => SettingsPage())),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => SettingsPage())),
                 ),
                 Divider(),
                 ListTile(
@@ -135,8 +143,8 @@ class ProfilePage extends StatelessWidget {
                   subtitle: Text('Questions and Answer'),
                   leading: Image.asset('assets/icons/faq.png'),
                   trailing: Icon(Icons.chevron_right, color: yellow),
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => FaqPage())),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => FaqPage())),
                 ),
                 Divider(),
               ],

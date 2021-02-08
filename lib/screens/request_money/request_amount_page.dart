@@ -1,7 +1,8 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/user.dart';
-import 'package:ecommerce_int2/screens/request_money/receive_page.dart';
 import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
+import '../../models/user.dart';
+import 'receive_page.dart';
 
 class RequestAmountPage extends StatelessWidget {
   final User user;

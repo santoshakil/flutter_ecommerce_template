@@ -1,15 +1,15 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/address/address_form.dart';
-import 'package:ecommerce_int2/screens/select_card_page.dart';
 import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
+import '../select_card_page.dart';
+import 'address_form.dart';
 
 class AddAddressPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget finishButton = InkWell(
-      onTap:()=> Navigator.of(context).push(
-          MaterialPageRoute(
-              builder: (_) => SelectCardPage())),
+      onTap: () => Navigator.of(context)
+          .push(MaterialPageRoute(builder: (_) => SelectCardPage())),
       child: Container(
         height: 80,
         width: MediaQuery.of(context).size.width / 1.5,

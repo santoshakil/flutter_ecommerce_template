@@ -1,7 +1,8 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import '../../app_properties.dart';
+import '../shop/check_out_page.dart';
 
 class RatingDialog extends StatelessWidget {
   @override
@@ -11,8 +12,8 @@ class RatingDialog extends StatelessWidget {
     Widget payNow = InkWell(
       onTap: () async {
         Navigator.of(context).pop();
-        Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CheckOutPage()));
-
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => CheckOutPage()));
       },
       child: Container(
         height: 60,

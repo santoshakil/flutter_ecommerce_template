@@ -1,8 +1,8 @@
-import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'package:ecommerce_int2/screens/rating/rating_dialog.dart';
+import '../../app_properties.dart';
+import 'rating_dialog.dart';
 
 class RatingPage extends StatefulWidget {
   @override
@@ -29,7 +29,8 @@ class _RatingPageState extends State<RatingPage> {
                 showDialog(
                     context: context,
                     child: Dialog(
-                      shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: RatingDialog(),
                     ));
               },
@@ -56,8 +57,8 @@ class _RatingPageState extends State<RatingPage> {
                                 color: yellow,
                                 shape: BoxShape.circle,
                                 boxShadow: shadow,
-                                border:
-                                    Border.all(width: 8.0, color: Colors.white)),
+                                border: Border.all(
+                                    width: 8.0, color: Colors.white)),
                             child: Image.asset('assets/headphones.png'),
                           ),
                           Padding(
@@ -133,18 +134,19 @@ class _RatingPageState extends State<RatingPage> {
                                   padding: const EdgeInsets.all(8.0),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5.0))),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(5.0))),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(right: 16.0),
                                         child: CircleAvatar(
                                           maxRadius: 14,
-                                          backgroundImage:
-                                              AssetImage('assets/background.jpg'),
+                                          backgroundImage: AssetImage(
+                                              'assets/background.jpg'),
                                         ),
                                       ),
                                       Expanded(
@@ -155,7 +157,8 @@ class _RatingPageState extends State<RatingPage> {
                                           children: <Widget>[
                                             Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
                                                 Text(
                                                   'Billy Holand',
@@ -172,8 +175,9 @@ class _RatingPageState extends State<RatingPage> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.symmetric(
-                                                  vertical: 8.0),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 8.0),
                                               child: FlutterRatingBar(
 //                                borderColor: Color(0xffFF8993),
 //                                fillColor: Color(0xffFF8993),
@@ -181,8 +185,9 @@ class _RatingPageState extends State<RatingPage> {
                                                 itemSize: 20,
                                                 allowHalfRating: true,
                                                 initialRating: val.toDouble(),
-                                                itemPadding: EdgeInsets.symmetric(
-                                                    horizontal: 4.0),
+                                                itemPadding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 4.0),
                                                 fullRatingWidget: Icon(
                                                   Icons.favorite,
                                                   color: Color(0xffFF8993),
@@ -207,8 +212,9 @@ class _RatingPageState extends State<RatingPage> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.symmetric(
-                                                  vertical: 16.0),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 16.0),
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment

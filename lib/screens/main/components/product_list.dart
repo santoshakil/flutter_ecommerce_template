@@ -1,9 +1,10 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/product/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+
+import '../../../app_properties.dart';
+import '../../../models/product.dart';
+import '../../product/product_page.dart';
 
 class ProductList extends StatelessWidget {
   List<Product> products;
@@ -14,10 +15,9 @@ class ProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double cardHeight = MediaQuery.of(context).size.height/2.7;
-    double cardWidth = MediaQuery.of(context).size.width/1.8;
-    if(products==null)
-      products = [];
+    double cardHeight = MediaQuery.of(context).size.height / 2.7;
+    double cardWidth = MediaQuery.of(context).size.width / 1.8;
+    if (products == null) products = [];
 
     return SizedBox(
       height: cardHeight,
@@ -25,10 +25,7 @@ class ProductList extends StatelessWidget {
         itemCount: products.length,
         itemBuilder: (_, index) {
           return ProductCard(
-            height: cardHeight,
-            width: cardWidth,
-            product: products[index]
-          );
+              height: cardHeight, width: cardWidth, product: products[index]);
         },
         scale: 0.8,
         controller: swiperController,
@@ -104,20 +101,14 @@ class ProductCard extends StatelessWidget {
   final double height;
   final double width;
 
-
-
-  const ProductCard({Key key, this.product,this.height,this.width})
+  const ProductCard({Key key, this.product, this.height, this.width})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
-      onTap: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => ProductPage(
-        product: product
-
-      ))),
+      onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => ProductPage(product: product))),
       child: Stack(
         children: <Widget>[
           Container(
@@ -179,8 +170,8 @@ class ProductCard extends StatelessWidget {
               tag: product.image,
               child: Image.asset(
                 product.image ?? '',
-                height: height/1.7,
-                width: width/1.4,
+                height: height / 1.7,
+                width: width / 1.4,
                 fit: BoxFit.contain,
               ),
             ),

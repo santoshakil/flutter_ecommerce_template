@@ -1,5 +1,6 @@
-import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/material.dart';
+
+import '../../app_properties.dart';
 
 class AddAddressForm extends StatelessWidget {
   @override
@@ -18,7 +19,8 @@ class AddAddressForm extends StatelessWidget {
             ),
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Flat Number/House Number'),
+                  border: InputBorder.none,
+                  hintText: 'Flat Number/House Number'),
             ),
           ),
           Container(

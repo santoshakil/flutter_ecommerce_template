@@ -1,8 +1,8 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 
+import '../../../app_properties.dart';
+import '../../../models/product.dart';
+import '../../shop/check_out_page.dart';
 import 'shop_product.dart';
 
 class ShopBottomSheet extends StatefulWidget {
@@ -12,21 +12,12 @@ class ShopBottomSheet extends StatefulWidget {
 
 class _ShopBottomSheetState extends State<ShopBottomSheet> {
   List<Product> products = [
-    Product(
-        'assets/headphones.png',
-        'Boat roackerz 400 On-Ear Bluetooth Headphones',
-        'description',
-        45.3),
-    Product(
-        'assets/headphones_2.png',
-        'Boat roackerz 100 On-Ear Bluetooth Headphones',
-        'description',
-        22.3),
-    Product(
-        'assets/headphones_3.png',
-        'Boat roackerz 300 On-Ear Bluetooth Headphones',
-        'description',
-        58.3)
+    Product('assets/headphones.png',
+        'Boat roackerz 400 On-Ear Bluetooth Headphones', 'description', 45.3),
+    Product('assets/headphones_2.png',
+        'Boat roackerz 100 On-Ear Bluetooth Headphones', 'description', 22.3),
+    Product('assets/headphones_3.png',
+        'Boat roackerz 300 On-Ear Bluetooth Headphones', 'description', 58.3)
   ];
 
   @override
@@ -94,11 +85,14 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
                   itemBuilder: (_, index) {
                     return Row(
                       children: <Widget>[
-                        ShopProduct(products[index],onRemove: (){
-                          setState(() {
-                            products.remove(products[index]);
-                          });
-                        },),
+                        ShopProduct(
+                          products[index],
+                          onRemove: () {
+                            setState(() {
+                              products.remove(products[index]);
+                            });
+                          },
+                        ),
                         index == 4
                             ? SizedBox()
                             : Container(

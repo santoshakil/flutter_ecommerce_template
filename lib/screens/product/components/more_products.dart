@@ -1,7 +1,8 @@
-import 'package:ecommerce_int2/app_properties.dart';
-import 'package:ecommerce_int2/models/product.dart';
-import 'package:ecommerce_int2/screens/product/components/product_card.dart';
 import 'package:flutter/material.dart';
+
+import '../../../app_properties.dart';
+import '../../../models/product.dart';
+import 'product_card.dart';
 
 class MoreProducts extends StatelessWidget {
   final List<Product> products = [
@@ -42,13 +43,14 @@ class MoreProducts extends StatelessWidget {
             itemCount: products.length,
             itemBuilder: (_, index) {
               return Padding(
-                ///calculates the left and right margins
-                ///to be even with the screen margin
+
+                  ///calculates the left and right margins
+                  ///to be even with the screen margin
                   padding: index == 0
                       ? EdgeInsets.only(left: 24.0, right: 8.0)
                       : index == 4
-                      ? EdgeInsets.only(right: 24.0, left: 8.0)
-                      : EdgeInsets.symmetric(horizontal: 8.0),
+                          ? EdgeInsets.only(right: 24.0, left: 8.0)
+                          : EdgeInsets.symmetric(horizontal: 8.0),
                   child: ProductCard(products[index]));
             },
             scrollDirection: Axis.horizontal,
